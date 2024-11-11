@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block start %}
+    <h2><a href="/contact">contact</a></h2>
+    <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, a incidunt mollitia natus ea eum excepturi, eos minima beatae error provident maxime culpa dignissimos in delectus necessitatibus rem modi explicabo.</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis ex cumque consectetur veniam quaerat recusandae quos beatae doloremque at fuga. Consectetur distinctio repudiandae possimus odio eos cumque, nisi deleniti quaerat.</p>
+    <p>{{peoples}}</p>
+
+    {% for people in peoples %}
+
+        <p>{{people.name}}</p>
+    
+        <p {% if people.age == 30 %} class="text-red-500" {% endif %}>
+            {{people.age}}
+            {% if people.age == 30 %}
+                <span class="text-red-500">30</span>
+            {% endif %}
+        </p>
+
+    {% endfor %}
+{% endblock %}
